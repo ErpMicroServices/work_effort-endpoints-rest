@@ -8,7 +8,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.util.UUID;
 
-@Entity
+@Entity(name = "position_type")
 public class PositionType extends AbstractPersistable<UUID> {
  @NotBlank
  @NotNull

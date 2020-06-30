@@ -8,7 +8,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.util.UUID;
 
-@Entity
+@Entity(name = "work_effort_type_association_type")
 public class WorkEffortTypeAssociationType extends AbstractPersistable<UUID> {
  @NotBlank
  @NotNull

@@ -8,7 +8,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.util.UUID;
 
-@Entity
+@Entity(name = "fixed_asset_type")
 public class FixedAssetType extends AbstractPersistable<UUID> {
  @NotBlank
  @NotNull

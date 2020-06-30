@@ -8,7 +8,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.util.UUID;
 
-@Entity
+@Entity(name = "party_asset_assignment_status_type")
 public class PartyAssetAssignmentStatusType extends AbstractPersistable<UUID> {
  @NotBlank
  @NotNull

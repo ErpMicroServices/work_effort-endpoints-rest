@@ -8,7 +8,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.util.UUID;
 
-@Entity
+@Entity(name = "rate_type")
 public class RateType extends AbstractPersistable<UUID> {
  @NotBlank
  @NotNull
