@@ -6,7 +6,7 @@ import javax.persistence.Entity;
 import javax.validation.constraints.NotNull;
 import java.util.UUID;
 
-@Entity
+@Entity(name = "fixed_asset_requirement")
 public class FixedAssetRequirement extends AbstractPersistable<UUID> {
 
  @NotNull
