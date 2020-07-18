@@ -19,7 +19,6 @@
         <developerConnection>scm:git:ssh://git@github.com:ErpMicroServices/work_effort-endpoints-rest.git
         </developerConnection>
         <url>scm:git:ssh://git@github.com:ErpMicroServices/work_effort-endpoints-rest.git</url>
-        <tag>work_effort-endpoints-rest-1.0.0</tag>
     </scm>
 
 
