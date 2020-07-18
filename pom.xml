@@ -22,6 +22,7 @@
         <tag>work_effort-endpoints-rest-1.0.0</tag>
     </scm>
 
+
     <distributionManagement>
         <repository>
             <id>github</id>
