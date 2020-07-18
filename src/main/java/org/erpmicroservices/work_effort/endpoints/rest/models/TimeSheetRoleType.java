@@ -1,5 +1,6 @@
 package org.erpmicroservices.work_effort.endpoints.rest.models;
 
+import lombok.Data;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
 import javax.persistence.Entity;
@@ -8,7 +9,8 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.util.UUID;
 
-@Entity(name = "timesheet_role_type")
+@Data
+@Entity(name = "time_sheet_role_type")
 public class TimeSheetRoleType extends AbstractPersistable<UUID> {
  @NotBlank
  @NotNull
@@ -17,19 +19,4 @@ public class TimeSheetRoleType extends AbstractPersistable<UUID> {
  @ManyToOne
  private TimeSheetRoleType parent;
 
- public String getDescription() {
-	return description;
- }
-
- public void setDescription(String description) {
-	this.description = description;
- }
-
- public TimeSheetRoleType getParent() {
-	return parent;
- }
-
- public void setParent(TimeSheetRoleType parent) {
-	this.parent = parent;
- }
 }
