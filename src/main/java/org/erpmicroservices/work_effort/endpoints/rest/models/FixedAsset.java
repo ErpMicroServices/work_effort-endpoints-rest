@@ -52,4 +52,8 @@ public class FixedAsset extends AbstractPersistable<UUID> {
  @OneToMany
  @JoinColumn(name = "fixed_asset_id")
  private List<FixedAssetAssignment> assignments = new ArrayList<>();
+
+ @OneToMany
+ @JoinColumn(name = "fixed_asset_id")
+ private List<PartyFixedAssetAssignment> assignedTo = new ArrayList<>();
 }
