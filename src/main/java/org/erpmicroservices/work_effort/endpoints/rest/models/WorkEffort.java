@@ -89,4 +89,8 @@ public class WorkEffort extends AbstractPersistable<UUID> {
  @JoinColumn(name = "associated_to_id")
  private List<WorkEffortAssociation> workEffortAssociationTo = new ArrayList<>();
 
+ @OneToMany
+ @JoinColumn(name = "version_of_id")
+ private List<WorkEffort> redones = new ArrayList<>();
+
 }
