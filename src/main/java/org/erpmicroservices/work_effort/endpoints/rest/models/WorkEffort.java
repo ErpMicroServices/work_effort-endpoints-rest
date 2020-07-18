@@ -100,4 +100,8 @@ public class WorkEffort extends AbstractPersistable<UUID> {
  @OneToMany
  @JoinColumn(name = "work_effort_id")
  private List<TimeEntry> timeEntries = new ArrayList<>();
+
+ @OneToMany
+ @JoinColumn(name = "work_effort_id")
+ private List<FixedAssetAssignment> fixedAssetAssignments = new ArrayList<>();
 }

@@ -1,6 +1,7 @@
 package org.erpmicroservices.work_effort.endpoints.rest.models;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.Data;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -12,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+@Data
 @Entity(name = "fixed_asset")
 public class FixedAsset extends AbstractPersistable<UUID> {
  @NotBlank
@@ -37,7 +39,7 @@ public class FixedAsset extends AbstractPersistable<UUID> {
 
  private String description;
 
- private UUID unitOfMeasure;
+ private UUID unitOfMeasureId;
 
  @ManyToOne
  @JoinColumn(name = "type_id")
@@ -47,75 +49,7 @@ public class FixedAsset extends AbstractPersistable<UUID> {
  @JoinColumn(name = "fixed_asset_id")
  private List<FixedAssetRequirement> requirements = new ArrayList<>();
 
- public String getName() {
-	return name;
- }
-
- public void setName(String name) {
-	this.name = name;
- }
-
- public LocalDate getDateAcquired() {
-	return dateAcquired;
- }
-
- public void setDateAcquired(LocalDate dateAcquired) {
-	this.dateAcquired = dateAcquired;
- }
-
- public LocalDate getDateLastServiced() {
-	return dateLastServiced;
- }
-
- public void setDateLastServiced(LocalDate dateLastServiced) {
-	this.dateLastServiced = dateLastServiced;
- }
-
- public LocalDate getDateNextService() {
-	return dateNextService;
- }
-
- public void setDateNextService(LocalDate dateNextService) {
-	this.dateNextService = dateNextService;
- }
-
- public Long getProductionCapacity() {
-	return productionCapacity;
- }
-
- public void setProductionCapacity(Long productionCapacity) {
-	this.productionCapacity = productionCapacity;
- }
-
- public String getDescription() {
-	return description;
- }
-
- public void setDescription(String description) {
-	this.description = description;
- }
-
- public UUID getUnitOfMeasure() {
-	return unitOfMeasure;
- }
-
- public void setUnitOfMeasure(UUID unitOfMeasure) {
-	this.unitOfMeasure = unitOfMeasure;
- }
-
- public FixedAssetType getType() {
-	return type;
- }
-
- public void setType(FixedAssetType type) {
-	this.type = type;
- }
-
- public List<FixedAssetRequirement> getRequirements() {
-	return requirements;
- }
-
- public void setRequirements(List<FixedAssetRequirement> requirements) {
-	this.requirements = requirements;
- }
+ @OneToMany
+ @JoinColumn(name = "fixed_asset_id")
+ private List<FixedAssetAssignment> assignments = new ArrayList<>();
 }
