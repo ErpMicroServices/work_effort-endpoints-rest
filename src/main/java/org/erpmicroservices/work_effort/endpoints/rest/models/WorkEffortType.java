@@ -1,13 +1,19 @@
 package org.erpmicroservices.work_effort.endpoints.rest.models;
 
+import lombok.Data;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
+@Data
 @Entity(name = "work_effort_type")
 public class WorkEffortType extends AbstractPersistable<UUID> {
  @NotBlank
@@ -17,19 +23,34 @@ public class WorkEffortType extends AbstractPersistable<UUID> {
  @ManyToOne
  private WorkEffortType parent;
 
- public String getDescription() {
-	return description;
- }
+ @OneToMany
+ @JoinColumn(name = "from_work_effort_type_id")
+ private List<WorkEffortTypeAssociation> fromAssociation;
 
- public void setDescription(String description) {
-	this.description = description;
- }
+ @OneToMany
+ @JoinColumn(name = "to_work_effort_type_id")
+ private List<WorkEffortTypeAssociation> toAssociation;
 
- public WorkEffortType getParent() {
-	return parent;
- }
+ @OneToMany
+ @JoinColumn(name = "work_effort_type_id")
+ private List<SkillStandard> skillStandards = new ArrayList<>();
 
- public void setParent(WorkEffortType parent) {
-	this.parent = parent;
- }
+ @OneToMany
+ @JoinColumn(name = "work_effort_type_id")
+ private List<GoodStandard> goodStandards = new ArrayList<>();
+
+ @OneToMany
+ @JoinColumn(name = "work_effort_type_id")
+ private List<FixedAssetStandard> fixedAssetStandards = new ArrayList<>();
+
+ @ManyToOne
+ @JoinColumn(name = "fixed_asset_type_id")
+ private FixedAssetType usedToRepair;
+
+ @ManyToOne
+ @JoinColumn(name = "deliverable_type_id")
+ private DeliverableType produces;
+
+
+ private UUID producesGoodId;
 }
