@@ -104,4 +104,12 @@ public class WorkEffort extends AbstractPersistable<UUID> {
  @OneToMany
  @JoinColumn(name = "work_effort_id")
  private List<FixedAssetAssignment> fixedAssetAssignments = new ArrayList<>();
+
+ @OneToMany
+ @JoinColumn(name = "work_effort_id")
+ private List<InventoryProduced> inventoryProducedList = new ArrayList<>();
+
+ @OneToMany
+ @JoinColumn(name = "work_effort_id")
+ private List<DeliverableProduced> deliverableProducedListProducedList = new ArrayList<>();
 }
