@@ -93,4 +93,7 @@ public class WorkEffort extends AbstractPersistable<UUID> {
  @JoinColumn(name = "version_of_id")
  private List<WorkEffort> redones = new ArrayList<>();
 
+ @OneToMany
+ @JoinColumn(name = "work_effort_id")
+ private List<PartyAssignment> partyAssignments = new ArrayList<>();
 }
