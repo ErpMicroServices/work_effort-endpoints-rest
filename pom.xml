@@ -9,7 +9,7 @@
     </parent>
     <groupId>org.erpmicroservices.work_effort.endpoints.rest</groupId>
     <artifactId>work_effort-endpoints-rest</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>work_effort-endpoints-rest</name>
     <description>Demo project for Spring Boot</description>
 
@@ -18,6 +18,7 @@
         <developerConnection>scm:git:ssh://git@github.com/ErpMicroServices/work_effort-endpoints-rest.git
         </developerConnection>
         <url>scm:git:ssh://git@github.com/ErpMicroServices/work_effort-endpoints-rest.git</url>
+    <tag>work_effort-endpoints-rest-1.0.0</tag>
   </scm>
 
 
