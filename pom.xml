@@ -25,7 +25,7 @@
         <repository>
             <id>github</id>
             <name>GitHub ErpMicroServices Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/ErpMicroServices</url>
+            <url>https://maven.pkg.github.com/ErpMicroServices/work_effort-endpoints-rest</url>
         </repository>
     </distributionManagement>
 
